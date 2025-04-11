@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/profile/profile_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -39,7 +41,7 @@ class HomePage extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    // pushNavigation(context, const ProfilePage());
+                    pushNavigation(context, const ProfilePage());
                   },
                   child: const CircleAvatar(
                     backgroundColor: Colors.white,
