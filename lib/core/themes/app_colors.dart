@@ -25,6 +25,7 @@ class AppColors {
   static const Color softRed = Color.fromARGB(255, 234, 170, 159); 
 
   static const purpleAccent = Color(0xFF6C5CE7);
-  static const buttonBrown = Color(0xFFF39C12E7);
+  static const buttonBrown = Color(0xFFF39C12);
+  static const lightBrown = Color(0xFFFDF2DF);
   
 }

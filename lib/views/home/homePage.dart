@@ -164,7 +164,7 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 16),
                 Container(
                   padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(color: Colors.orange.shade100),
+                  decoration: BoxDecoration(color: AppColors.lightBrown),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -186,10 +186,19 @@ class HomePage extends StatelessWidget {
                           ),
                           Container(
                             height: 30,
-                            width: 82,
+                            width: 85,
                             decoration: BoxDecoration(
                               color: AppColors.buttonBrown,
                               borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Try Now",
+                                style: TextStyle(
+                                  color: AppColors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ),
                           ),
                         ],
