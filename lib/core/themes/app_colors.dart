@@ -24,5 +24,5 @@ class AppColors {
   static const Color amberYellow = Color(0xFFF39C12);
   static const Color softRed = Color.fromARGB(255, 234, 170, 159); 
 
-
+  static const purpleAccent = Color(0xFF6C5CE7);
 }

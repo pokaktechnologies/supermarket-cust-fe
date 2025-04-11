@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:supermarket_customer_fe/views/aiPage.dart';
+import 'package:supermarket_customer_fe/views/ai/ai_screen.dart';
 import 'package:supermarket_customer_fe/views/category.dart';
 import 'package:supermarket_customer_fe/views/home/homePage.dart';
 import 'package:supermarket_customer_fe/views/offerPage.dart';
-import 'package:supermarket_customer_fe/views/reOrderPage.dart';
+import 'package:supermarket_customer_fe/views/re-order/re-order.dart';
 import 'package:supermarket_customer_fe/widgets/bottom_bar.dart';
 
 class MainScreen extends StatefulWidget {
@@ -19,8 +19,8 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = const [
     HomePage(),
     Category(),
-    Aipage(),
-    Reorderpage(),
+    AIScreen(),
+    ReorderScreen(),
     Offerpage(),
   ];
 

@@ -97,6 +97,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: () {
                       pushAndRemoveUntilFun(context, const MainScreen());
                     },
+                    buttonColor: AppColors.green,
                   ),
                   const SizedBox(height: 10),
                   Row(

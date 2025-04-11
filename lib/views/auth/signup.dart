@@ -132,6 +132,7 @@ class _SignupState extends State<Signup> {
                     onPressed: () {
                       pushNavigation(context, const OtpScreen());
                     },
+                    buttonColor: AppColors.green,
                   ),
                   const SizedBox(height: 10),
                   Row(

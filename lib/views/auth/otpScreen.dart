@@ -34,6 +34,7 @@ class OtpScreen extends StatelessWidget {
                 onPressed: () {
                   pushAndRemoveUntilFun(context, const MainScreen());
                 },
+                buttonColor: AppColors.green,
               ),
               const SizedBox(height: 16),
               Row(

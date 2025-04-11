@@ -4,7 +4,13 @@ import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  const CustomButton({super.key, required this.text, required this.onPressed});
+  final Color buttonColor;
+  const CustomButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+    required this.buttonColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,7 @@ class CustomButton extends StatelessWidget {
         height: 45,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: AppColors.primaryColor,
+          color: buttonColor,
           borderRadius: BorderRadius.circular(25),
         ),
         child: Center(

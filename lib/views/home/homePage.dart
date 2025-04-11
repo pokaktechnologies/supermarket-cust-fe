@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
+import 'package:supermarket_customer_fe/views/home/hot_pic_item.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -75,61 +76,86 @@ class HomePage extends StatelessWidget {
         child: Stack(
           children: [
             ListView(
-              padding: const EdgeInsets.all(16),
               children: [
-                const Text(
-                  'Hot Picks',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                SizedBox(height: 5,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  child: const Text(
+                    'Hot Picks',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 const SizedBox(height: 8),
-                SizedBox(
-                  height: 170,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: const [
-                      HotPickItem(
-                        title: 'Essential Focus',
-                        subtitle: 'Fresh Vegetables',
-                        primaryColor: AppColors.mixedLightGreen,
-                        textColor: AppColors.green,
-                        bottomImg: AppAssets.essentialEllipseIcon,
-                        primaryImg: AppAssets.essentialIcon,
-                      ),
-                      HotPickItem(
-                        title: 'Daily Saver',
-                        subtitle: 'Grocery Discounts',
-                        primaryColor: AppColors.softAmber,
-                        textColor: AppColors.amberYellow,
-                        bottomImg: AppAssets.dailySaverEllipseImg,
-                        primaryImg: AppAssets.dailySaverImg,
-                      ),
-                      HotPickItem(
-                        title: 'Must-Have',
-                        subtitle: 'Snacks & Beverages',
-                        primaryColor: Color.fromARGB(255, 239, 185, 175),
-                        textColor: AppColors.red,
-                        bottomImg: AppAssets.musthaveEllipseIcon,
-                        primaryImg: AppAssets.musthaveIcon,
-                      ),
-                    ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  child: SizedBox(
+                    height: 170,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        HotPickItem(
+                          title: 'Essential Focus',
+                          subtitle: 'Fresh Vegetables',
+                          primaryColor: AppColors.mixedLightGreen,
+                          textColor: AppColors.green,
+                          bottomImg: AppAssets.essentialEllipseIcon,
+                          primaryImg: AppAssets.essentialIcon,
+                        ),
+                        HotPickItem(
+                          title: 'Daily Saver',
+                          subtitle: 'Grocery Discounts',
+                          primaryColor: AppColors.softAmber,
+                          textColor: AppColors.amberYellow,
+                          bottomImg: AppAssets.dailySaverEllipseImg,
+                          primaryImg: AppAssets.dailySaverImg,
+                        ),
+                        HotPickItem(
+                          title: 'Must-Have',
+                          subtitle: 'Snacks & Beverages',
+                          primaryColor: Color.fromARGB(255, 239, 185, 175),
+                          textColor: AppColors.red,
+                          bottomImg: AppAssets.musthaveEllipseIcon,
+                          primaryImg: AppAssets.musthaveIcon,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple.shade100,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Deal of the day\nUp to 50% Off',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Icon(Icons.arrow_forward),
-                    ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: AppColors.purpleAccent,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Deal of the day\nUp to 50% Off',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.white,
+                          ),
+                        ),
+                        Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          child: Center(
+                            child: Icon(
+                              Icons.arrow_right_alt_outlined,
+                              color: AppColors.green,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -137,7 +163,6 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Colors.orange.shade100,
-                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -176,88 +201,6 @@ class HomePage extends StatelessWidget {
         ),
       ),
       // bottomNavigationBar: const BottomBar(),
-    );
-  }
-}
-
-class HotPickItem extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final Color primaryColor;
-  final Color textColor;
-  final String bottomImg;
-  final String primaryImg;
-  const HotPickItem({
-    super.key,
-    required this.title,
-    required this.subtitle,
-    required this.primaryColor,
-    required this.textColor,
-    required this.bottomImg,
-    required this.primaryImg,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 140,
-      margin: const EdgeInsets.only(right: 12),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 15),
-          Container(
-            height: 22,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [primaryColor, AppColors.white],
-              ),
-            ),
-            child: Center(
-              child: Text(
-                title,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 13,
-                  color: textColor,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 4),
-          Center(
-            child: Text(
-              subtitle,
-              style: const TextStyle(
-                fontSize: 12,
-                color: AppColors.grey,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Center(
-                child: Image.asset(
-                  primaryImg,
-                  height: 80,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Image.asset(bottomImg, height: 30, width: 110, fit: BoxFit.fill,),
-            ],
-          ),
-        ],
-      ),
     );
   }
 }
