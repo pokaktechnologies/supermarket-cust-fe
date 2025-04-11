@@ -17,4 +17,12 @@ class AppColors {
   static const green = Colors.green;
   static const orange = Colors.orange;
   static const Color cloudGrey = Color(0xFFECF0F1);
+
+  // homepage color
+  static const Color mixedLightGreen = Color.fromARGB(255, 182, 222, 195);
+  static const Color softAmber = Color.fromARGB(255, 243, 220, 186);
+  static const Color amberYellow = Color(0xFFF39C12);
+  static const Color softRed = Color.fromARGB(255, 234, 170, 159); 
+
+
 }

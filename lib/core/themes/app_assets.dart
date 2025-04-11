@@ -13,4 +13,10 @@ class AppAssets {
   static const String essentialIcon = 'assets/images/essential_img.png';
   static const String dailySaverImg = 'assets/images/dailysaver_img.png';
   static const String musthaveIcon = 'assets/images/musthave_img.png';
+  static const String essentialEllipseIcon =
+      'assets/images/essential_ellipse.png';
+  static const String dailySaverEllipseImg =
+      'assets/images/dailysaver_ellipse.png';
+  static const String musthaveEllipseIcon =
+      'assets/images/musthave_ellipse.png';
 }

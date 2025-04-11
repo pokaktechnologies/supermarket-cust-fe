@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
-import 'package:supermarket_customer_fe/core/utils/navigations.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -83,21 +83,33 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 SizedBox(
-                  height: 110,
+                  height: 170,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: const [
                       HotPickItem(
                         title: 'Essential Focus',
                         subtitle: 'Fresh Vegetables',
+                        primaryColor: AppColors.mixedLightGreen,
+                        textColor: AppColors.green,
+                        bottomImg: AppAssets.essentialEllipseIcon,
+                        primaryImg: AppAssets.essentialIcon,
                       ),
                       HotPickItem(
                         title: 'Daily Saver',
                         subtitle: 'Grocery Discounts',
+                        primaryColor: AppColors.softAmber,
+                        textColor: AppColors.amberYellow,
+                        bottomImg: AppAssets.dailySaverEllipseImg,
+                        primaryImg: AppAssets.dailySaverImg,
                       ),
                       HotPickItem(
                         title: 'Must-Have',
                         subtitle: 'Snacks & Beverages',
+                        primaryColor: Color.fromARGB(255, 239, 185, 175),
+                        textColor: AppColors.red,
+                        bottomImg: AppAssets.musthaveEllipseIcon,
+                        primaryImg: AppAssets.musthaveIcon,
                       ),
                     ],
                   ),
@@ -171,14 +183,25 @@ class HomePage extends StatelessWidget {
 class HotPickItem extends StatelessWidget {
   final String title;
   final String subtitle;
-  const HotPickItem({super.key, required this.title, required this.subtitle});
+  final Color primaryColor;
+  final Color textColor;
+  final String bottomImg;
+  final String primaryImg;
+  const HotPickItem({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.primaryColor,
+    required this.textColor,
+    required this.bottomImg,
+    required this.primaryImg,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 140,
       margin: const EdgeInsets.only(right: 12),
-      // padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(12),
@@ -194,20 +217,45 @@ class HotPickItem extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
-                colors: [
-                  AppColors.red, // Original (darker) shade
-                  AppColors.red.withOpacity(0.10), // Lighter shade
-                ],
+                colors: [primaryColor, AppColors.white],
               ),
             ),
-            child: Text(
-              title,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            child: Center(
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                  color: textColor,
+                ),
+              ),
             ),
           ),
           const SizedBox(height: 4),
-          Text(subtitle, style: const TextStyle(fontSize: 12)),
-          const Spacer(),
+          Center(
+            child: Text(
+              subtitle,
+              style: const TextStyle(
+                fontSize: 12,
+                color: AppColors.grey,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Image.asset(
+                  primaryImg,
+                  height: 80,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Image.asset(bottomImg, height: 30, width: 110, fit: BoxFit.fill,),
+            ],
+          ),
         ],
       ),
     );

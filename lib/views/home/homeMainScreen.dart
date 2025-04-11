@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:supermarket_customer_fe/homePage.dart';
 import 'package:supermarket_customer_fe/views/aiPage.dart';
 import 'package:supermarket_customer_fe/views/category.dart';
+import 'package:supermarket_customer_fe/views/home/homePage.dart';
 import 'package:supermarket_customer_fe/views/offerPage.dart';
 import 'package:supermarket_customer_fe/views/reOrderPage.dart';
 import 'package:supermarket_customer_fe/widgets/bottom_bar.dart';
