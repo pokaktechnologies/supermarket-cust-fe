@@ -23,4 +23,6 @@ class AppAssets {
   static const String recipeImg = 'assets/images/recipe_img.png';
   static const String personalPicImg = 'assets/images/personal_pics.png';
   static const String mealsPlannerImg = 'assets/images/meals_planning.png';
+  static const String recoImge = 'assets/images/recomented_img.png';
+  static const String percentageIg = 'assets/images/percentage_card.png';
 }
