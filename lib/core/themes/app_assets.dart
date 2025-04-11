@@ -19,4 +19,8 @@ class AppAssets {
       'assets/images/dailysaver_ellipse.png';
   static const String musthaveEllipseIcon =
       'assets/images/musthave_ellipse.png';
+
+  static const String recipeImg = 'assets/images/recipe_img.png';
+  static const String personalPicImg = 'assets/images/personal_pics.png';
+  static const String mealsPlannerImg = 'assets/images/meals_planning.png';
 }

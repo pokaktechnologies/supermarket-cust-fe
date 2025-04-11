@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
-import 'package:supermarket_customer_fe/widgets/customButton.dart';
+import 'package:supermarket_customer_fe/widgets/buttons/customButton.dart';
 
 class ReorderScreen extends StatelessWidget {
   const ReorderScreen({super.key});

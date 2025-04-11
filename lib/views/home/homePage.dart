@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/home/assistant_tile.dart';
 import 'package:supermarket_customer_fe/views/home/hot_pic_item.dart';
 import 'package:supermarket_customer_fe/views/profile/profile_page.dart';
 
@@ -79,7 +80,7 @@ class HomePage extends StatelessWidget {
           children: [
             ListView(
               children: [
-                SizedBox(height: 5,),
+                SizedBox(height: 5),
                 Padding(
                   padding: const EdgeInsets.only(left: 16, right: 16),
                   child: const Text(
@@ -95,7 +96,7 @@ class HomePage extends StatelessWidget {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: const [
-                        HotPickItem(
+                        HotPickItemSec(
                           title: 'Essential Focus',
                           subtitle: 'Fresh Vegetables',
                           primaryColor: AppColors.mixedLightGreen,
@@ -103,7 +104,7 @@ class HomePage extends StatelessWidget {
                           bottomImg: AppAssets.essentialEllipseIcon,
                           primaryImg: AppAssets.essentialIcon,
                         ),
-                        HotPickItem(
+                        HotPickItemSec(
                           title: 'Daily Saver',
                           subtitle: 'Grocery Discounts',
                           primaryColor: AppColors.softAmber,
@@ -111,7 +112,7 @@ class HomePage extends StatelessWidget {
                           bottomImg: AppAssets.dailySaverEllipseImg,
                           primaryImg: AppAssets.dailySaverImg,
                         ),
-                        HotPickItem(
+                        HotPickItemSec(
                           title: 'Must-Have',
                           subtitle: 'Snacks & Beverages',
                           primaryColor: Color.fromARGB(255, 239, 185, 175),
@@ -163,75 +164,70 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 16),
                 Container(
                   padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: Colors.orange.shade100,
-                  ),
-                  child: const Column(
+                  decoration: BoxDecoration(color: Colors.orange.shade100),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Your personal grocery assistant',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'Find recipes, get recommendations, and shop smarter with AI',
-                      ),
-                      SizedBox(height: 12),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          AssistantTile(
-                            title: 'Recipe\nSuggestions',
-                            buttonText: 'Browse',
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Your personal grocery assistant',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'Find recipes, get recommendations, and \nshop smarter with AI',
+                                style: TextStyle(fontSize: 12),
+                              ),
+                            ],
                           ),
-                          AssistantTile(
-                            title: 'Personalized\npicks',
-                            buttonText: 'View',
-                          ),
-                          AssistantTile(
-                            title: 'Meal\nPlanning',
-                            buttonText: 'Try Search',
+                          Container(
+                            height: 30,
+                            width: 82,
+                            decoration: BoxDecoration(
+                              color: AppColors.buttonBrown,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                           ),
                         ],
+                      ),
+
+                      SizedBox(height: 12),
+                      SizedBox(
+                        height: 150,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            AssistantTile(
+                              title: 'Recipe\nSuggestions',
+                              buttonText: 'Browse',
+                              assetImage: AppAssets.recipeImg,
+                            ),
+                            AssistantTile(
+                              title: 'Personalized\npicks',
+                              buttonText: 'View',
+                              assetImage: AppAssets.personalPicImg,
+                            ),
+                            AssistantTile(
+                              title: 'Meal\nPlanning',
+                              buttonText: 'Try Search',
+                              assetImage: AppAssets.mealsPlannerImg,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
+                SizedBox(height: 124),
               ],
             ),
           ],
         ),
       ),
-      // bottomNavigationBar: const BottomBar(),
-    );
-  }
-}
-
-class AssistantTile extends StatelessWidget {
-  final String title;
-  final String buttonText;
-  const AssistantTile({
-    super.key,
-    required this.title,
-    required this.buttonText,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          title,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 12),
-        ),
-        const SizedBox(height: 8),
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-          child: Text(buttonText, style: const TextStyle(color: Colors.black)),
-        ),
-      ],
     );
   }
 }

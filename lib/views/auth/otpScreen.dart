@@ -3,7 +3,7 @@ import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
 import 'package:supermarket_customer_fe/views/auth/signup.dart';
 import 'package:supermarket_customer_fe/views/home/homeMainScreen.dart';
-import 'package:supermarket_customer_fe/widgets/customButton.dart';
+import 'package:supermarket_customer_fe/widgets/buttons/customButton.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});

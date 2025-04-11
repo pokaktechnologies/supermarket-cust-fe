@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 
-class HotPickItem extends StatelessWidget {
+class HotPickItemSec extends StatelessWidget {
   final String title;
   final String subtitle;
   final Color primaryColor;
   final Color textColor;
   final String bottomImg;
   final String primaryImg;
-  const HotPickItem({
+  const HotPickItemSec({
     super.key,
     required this.title,
     required this.subtitle,

@@ -4,7 +4,7 @@ import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
 import 'package:supermarket_customer_fe/views/auth/loginScreen.dart';
 import 'package:supermarket_customer_fe/views/auth/otpScreen.dart';
-import 'package:supermarket_customer_fe/widgets/customButton.dart';
+import 'package:supermarket_customer_fe/widgets/buttons/customButton.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
