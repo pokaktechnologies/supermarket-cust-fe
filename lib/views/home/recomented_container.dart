@@ -8,7 +8,7 @@ class RecomentedContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 230,
+      height: 250,
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.only(
@@ -39,7 +39,7 @@ class RecomentedContainer extends StatelessWidget {
             SizedBox(height: 10),
 
             SizedBox(
-              height: 170,
+              height: 180,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -63,61 +63,96 @@ class SingleProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 155,
-      width: 120,
-      decoration: BoxDecoration(
-        color: AppColors.cloudGrey,
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: AppColors.grey,
-          width: 0.5, // 👈 decrease this value to make the border thinner
+    return SizedBox(
+      width: 150,
+      child: Container(
+        margin: const EdgeInsets.only(right: 10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.white,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.1), // shadow color
-            spreadRadius: 2, // how much the shadow spreads
-            blurRadius: 1, // how blurry the shadow is
-            offset: Offset(0, 3), // position of the shadow (x, y)
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
-            height: 75,
-            width: 120,
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                Image.asset(AppAssets.recoImge),
-                Positioned(
-                  right: 80,
-                  top: 0,
-                  bottom: 0,
-
-                  child: Image.asset(
-                    AppAssets.percentageIg,
-                    width: 30,
-                    height: 35,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // 🔷 Top section with grey background
+            Container(
+              decoration: const BoxDecoration(color: Color(0xFFEAEAEA)),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Center(
+                        child: Image.asset(
+                          AppAssets.percentageIg,
+                          height: 30,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Colors.green, width: 1.5),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Center(
+                          child: Icon(Icons.add, size: 16, color: Colors.green),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: 75,
-            width: 120,
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(15),
-                bottomRight: Radius.circular(15),
+                  Center(
+                    child: Image.asset(
+                      AppAssets.recoImge,
+                      height: 70,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "new image",
+                    style: const TextStyle(fontWeight: FontWeight.w600),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "200",
+                        style: const TextStyle(
+                          fontSize: 12,
+                          decoration: TextDecoration.lineThrough,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        "150",
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text(
+                    "10",
+                    style: const TextStyle(color: Colors.grey, fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
