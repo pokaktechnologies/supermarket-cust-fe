@@ -235,7 +235,7 @@ class HomePage extends StatelessWidget {
                 ),
 
                 RecomentedContainer(),
-                
+                FlashsaleScreen(),
                 // FlashSaleScreen(),
                 // SizedBox(height: 124),
               ],
