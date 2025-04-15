@@ -25,4 +25,16 @@ class AppAssets {
   static const String mealsPlannerImg = 'assets/images/meals_planning.png';
   static const String recoImge = 'assets/images/recomented_img.png';
   static const String percentageIg = 'assets/images/percentage_card.png';
+  static const String ellipseIcon = 'assets/images/ellipse_icon.png';
+
+  static const String catImg2 = 'assets/images/Vector (32).png';
+  static const String catImg3 = 'assets/images/Vector (33).png';
+  static const String catImg4 = 'assets/images/Vector (34).png';
+
+  static const String catImg5 = 'assets/images/Vector (35).png';
+  static const String catImg6 = 'assets/images/Vector (36).png';
+  static const String catImg7 = 'assets/images/Vector (37).png';
+  static const String catImg8 = 'assets/images/Vector (38).png';
+  static const String catImg9 = 'assets/images/Vector (39).png';
+  static const String catImg10 = 'assets/images/Vector (40).png';
 }
