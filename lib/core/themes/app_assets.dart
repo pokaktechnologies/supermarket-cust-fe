@@ -37,4 +37,12 @@ class AppAssets {
   static const String catImg8 = 'assets/images/Vector (38).png';
   static const String catImg9 = 'assets/images/Vector (39).png';
   static const String catImg10 = 'assets/images/Vector (40).png';
+
+  static const String brandImg1 = 'assets/images/image 29.png';
+  static const String brandImg2 = 'assets/images/image 30 (1).png';
+  static const String brandImg3 = 'assets/images/image 31.png';
+  static const String brandImg4 = 'assets/images/image 32.png';
+
+  static const String bannerImg1 = 'assets/images/Vector (41).png';
+  static const String bannerImg2 = 'assets/images/Vector (42).png';
 }

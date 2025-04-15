@@ -7,6 +7,7 @@ import 'package:supermarket_customer_fe/views/home/flashsale_screen.dart';
 import 'package:supermarket_customer_fe/views/home/hot_pic_item.dart';
 import 'package:supermarket_customer_fe/views/home/recomented_container.dart';
 import 'package:supermarket_customer_fe/views/home/shop_by_category.dart';
+import 'package:supermarket_customer_fe/views/home/top_brands.dart';
 import 'package:supermarket_customer_fe/views/profile/profile_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -237,9 +238,12 @@ class HomePage extends StatelessWidget {
 
                 RecomentedContainer(),
                 FlashsaleScreen(),
-                ShopByCategory()
-                // FlashSaleScreen(),
-                // SizedBox(height: 124),
+                ShopByCategory(),
+                TopBrands(),
+                SizedBox(height: 10,),
+                Image.asset(AppAssets.bannerImg1),
+                Image.asset(AppAssets.bannerImg2),
+                SizedBox(height: 10,),
               ],
             ),
           ],
