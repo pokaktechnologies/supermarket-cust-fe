@@ -16,9 +16,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
 
-  final List<Widget> _pages = const [
+  final List<Widget> _pages = [
     HomePage(),
-    Category(),
+    CategoryPage(),
     AIScreen(),
     ReorderScreen(),
     Offerpage(),
