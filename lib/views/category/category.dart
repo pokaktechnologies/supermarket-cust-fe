@@ -1,33 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
+import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/category/sub_category.dart';
 import 'package:supermarket_customer_fe/views/home/shop_by_category.dart';
 import 'package:supermarket_customer_fe/views/home/top_brands.dart';
 
 class CategoryPage extends StatelessWidget {
-  CategoryPage({super.key});
-  final List<Map<String, String>> categories = [
-    {"title": "Groceries & Kitchen", "image": "🍅"},
-    {"title": "Personal Care & Hygiene", "image": "🧴"},
-    {"title": "Baby & Kids", "image": "🍼"},
-    {"title": "Household Essentials", "image": "🧹"},
-    {"title": "Pet Care", "image": "🐶"},
-    {"title": "Health & Wellness", "image": "💊"},
-    {"title": "Home & Living", "image": "🏠"},
-    {"title": "Electronics & Accessories", "image": "🔌"},
-    {"title": "Seasonal & Holiday", "image": "🎉"},
-    {"title": "Office & School", "image": "📚"},
-  ];
-
-  final List<String> brands = [
-    "Amul",
-    "Nestle",
-    "Mother Dairy",
-    "Parag",
-    "Hawkins",
-    "TTK Prestige",
-    "Stovekraft",
-    "Bajaj",
-  ];
+  const CategoryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,13 +43,29 @@ class CategoryPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SingleProduct(
-                  text: "Groceries& Kitchen",
-                  image: AppAssets.dailySaverImg,
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Groceries& Kitchen"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Groceries& Kitchen",
+                    image: AppAssets.dailySaverImg,
+                  ),
                 ),
-                SingleProduct(
-                  text: "Personal Care & Hygiene",
-                  image: AppAssets.catImg2,
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Personal Care & Hygiene"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Personal Care & Hygiene",
+                    image: AppAssets.catImg2,
+                  ),
                 ),
                 SingleProduct(text: "Baby & Kids", image: AppAssets.catImg3),
                 SingleProduct(

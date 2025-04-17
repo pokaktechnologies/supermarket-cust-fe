@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/views/ai/ai_screen.dart';
-import 'package:supermarket_customer_fe/views/category.dart';
+import 'package:supermarket_customer_fe/views/category/category.dart';
 import 'package:supermarket_customer_fe/views/home/homePage.dart';
 import 'package:supermarket_customer_fe/views/offerPage.dart';
 import 'package:supermarket_customer_fe/views/re-order/re-order.dart';
@@ -16,7 +16,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
 
-  final List<Widget> _pages = [
+  final List<Widget> _pages = const [
     HomePage(),
     CategoryPage(),
     AIScreen(),

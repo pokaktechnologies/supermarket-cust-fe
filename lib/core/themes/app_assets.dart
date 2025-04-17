@@ -47,4 +47,5 @@ class AppAssets {
   static const String bannerImg2 = 'assets/images/Vector (42).png';
 
   static const String categoryBannerImg = 'assets/images/Vector (46).png';
+  static const String backArrow = 'assets/arrow_back_icon.png';
 }
