@@ -49,7 +49,77 @@ class CategoryProduct extends StatelessWidget {
         ],
       ),
 
-      
+      body: Column(
+        children: [
+          Container(
+            height: 55,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  offset: Offset(0, 4), // Only on bottom
+                  blurRadius: 6,
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(AppAssets.expandIcon),
+                  dividerContainer(),
+                  Row(
+                    children: [
+                      Image.asset(AppAssets.sortIcon),
+                      Text(
+                        "Sort",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                  dividerContainer(),
+                  Row(
+                    children: [
+                      Image.asset(AppAssets.filterIcon),
+                      Text(
+                        "Filter",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+
+          Expanded(
+            child: ListView.builder(
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return ListTile(title: Text("Item $index"));
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
+}
+
+Widget dividerContainer() {
+  return Container(
+    height: 55,
+    width: 1,
+    // margin: EdgeInsets.symmetric(horizontal: 16),
+    color: Colors.black.withOpacity(0.2), // same feel as shadow
+  );
 }

@@ -48,4 +48,8 @@ class AppAssets {
 
   static const String categoryBannerImg = 'assets/images/Vector (46).png';
   static const String backArrow = 'assets/arrow_back_icon.png';
+
+  static const String expandIcon = 'assets/images/expand_icon.png';
+  static const String filterIcon = 'assets/images/filter_icon.png';
+  static const String sortIcon = 'assets/images/sort_icon.png';
 }
