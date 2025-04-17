@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/category/category_product.dart';
 import 'package:supermarket_customer_fe/views/home/shop_by_category.dart';
 import 'package:supermarket_customer_fe/views/home/top_brands.dart';
 
@@ -21,7 +22,8 @@ class SubcategoryPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: const Color(0xFF27AE60),
+        toolbarHeight: 70,
         title: Text(selectedTitle, style: TextStyle(color: AppColors.white)),
         leading: InkWell(
           onTap: () => popNavigation(context),
@@ -65,9 +67,14 @@ class SubcategoryPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SingleProduct(
-                  text: "Groceries& Kitchen",
-                  image: AppAssets.dailySaverImg,
+                InkWell(
+                  onTap: () {
+                    pushNavigation(context, CategoryProduct());
+                  },
+                  child: SingleProduct(
+                    text: "Groceries& Kitchen",
+                    image: AppAssets.dailySaverImg,
+                  ),
                 ),
                 SingleProduct(
                   text: "Personal Care & Hygiene",
