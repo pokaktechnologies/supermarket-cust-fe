@@ -67,38 +67,113 @@ class CategoryPage extends StatelessWidget {
                     image: AppAssets.catImg2,
                   ),
                 ),
-                SingleProduct(text: "Baby & Kids", image: AppAssets.catImg3),
-                SingleProduct(
-                  text: "Household Essentials",
-                  image: AppAssets.catImg4,
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Baby & Kids"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Baby & Kids",
+                    image: AppAssets.catImg3,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Household Essentials"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Household Essentials",
+                    image: AppAssets.catImg4,
+                  ),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SingleProduct(text: "Pet Care", image: AppAssets.catImg5),
-                SingleProduct(
-                  text: "Health & Wellness",
-                  image: AppAssets.catImg6,
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Pet Care"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Pet Care",
+                    image: AppAssets.catImg5,
+                  ),
                 ),
-                SingleProduct(text: "Home & Living", image: AppAssets.catImg7),
-                SingleProduct(
-                  text: "Electronics & Accessories",
-                  image: AppAssets.catImg8,
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Health & Wellness"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Health & Wellness",
+                    image: AppAssets.catImg6,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Home & Living"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Home & Living",
+                    image: AppAssets.catImg7,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(
+                        selectedTitle: "Electronics & Accessories",
+                      ),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Electronics & Accessories",
+                    image: AppAssets.catImg8,
+                  ),
                 ),
               ],
             ),
             Row(
               children: [
-                SingleProduct(
-                  text: "Seasonal & Holiday",
-                  image: AppAssets.catImg9,
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Seasonal & Holiday"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Seasonal & Holiday",
+                    image: AppAssets.catImg9,
+                  ),
                 ),
                 SizedBox(width: 10),
-                SingleProduct(
-                  text: "Office & School",
-                  image: AppAssets.catImg10,
+                InkWell(
+                  onTap: () {
+                    pushNavigation(
+                      context,
+                      SubcategoryPage(selectedTitle: "Office & School"),
+                    );
+                  },
+                  child: SingleProduct(
+                    text: "Office & School",
+                    image: AppAssets.catImg10,
+                  ),
                 ),
               ],
             ),
