@@ -2,9 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/category/single_category_product.dart';
 
-class CategoryProduct extends StatelessWidget {
+class CategoryProduct extends StatefulWidget {
   const CategoryProduct({super.key});
+
+  @override
+  State<CategoryProduct> createState() => _CategoryProductState();
+}
+
+class _CategoryProductState extends State<CategoryProduct> {
+  bool _isExpanded = false;
+
+  void _toggleExpand() {
+    setState(() {
+      _isExpanded = !_isExpanded;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +63,8 @@ class CategoryProduct extends StatelessWidget {
         ],
       ),
 
-      body: Column(
+      body: ListView(
+        padding: EdgeInsets.zero,
         children: [
           Container(
             height: 55,
@@ -59,7 +74,7 @@ class CategoryProduct extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
-                  offset: Offset(0, 4), // Only on bottom
+                  offset: Offset(0, 4),
                   blurRadius: 6,
                 ),
               ],
@@ -69,11 +84,15 @@ class CategoryProduct extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(AppAssets.expandIcon),
+                  InkWell(
+                    onTap: _toggleExpand,
+                    child: Image.asset(AppAssets.expandIcon),
+                  ),
                   dividerContainer(),
                   Row(
                     children: [
                       Image.asset(AppAssets.sortIcon),
+                      SizedBox(width: 5),
                       Text(
                         "Sort",
                         style: TextStyle(
@@ -87,6 +106,7 @@ class CategoryProduct extends StatelessWidget {
                   Row(
                     children: [
                       Image.asset(AppAssets.filterIcon),
+                      SizedBox(width: 5),
                       Text(
                         "Filter",
                         style: TextStyle(
@@ -101,14 +121,31 @@ class CategoryProduct extends StatelessWidget {
             ),
           ),
 
-          Expanded(
-            child: ListView.builder(
-              itemCount: 20,
-              itemBuilder: (context, index) {
-                return ListTile(title: Text("Item $index"));
-              },
-            ),
+          AnimatedContainer(
+            duration: Duration(milliseconds: 400),
+            constraints:
+                _isExpanded
+                    ? const BoxConstraints(maxHeight: 100)
+                    : const BoxConstraints(maxHeight: 0),
+
+            width: double.infinity,
+            color: Colors.green.shade50,
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: _isExpanded ? ExpandedProduct() : null,
           ),
+
+          // PRODUCT LIST
+          ...List.generate(10, (index) {
+            return ListTile(
+              title: Row(
+                children: [
+                  SingleCategoryProduct(),
+                  SingleCategoryProduct(),
+                  SingleCategoryProduct(),
+                ],
+              ),
+            );
+          }),
         ],
       ),
     );
@@ -122,4 +159,52 @@ Widget dividerContainer() {
     // margin: EdgeInsets.symmetric(horizontal: 16),
     color: Colors.black.withOpacity(0.2), // same feel as shadow
   );
+}
+
+class ExpandedProduct extends StatelessWidget {
+  const ExpandedProduct({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      width: 10,
+      color: AppColors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Column(
+            children: [
+              SizedBox(
+                height: 30,
+                width: 50,
+                child: Image.asset(AppAssets.vegIcon),
+              ),
+              Text("Fruits", style: TextStyle(color: AppColors.grey)),
+            ],
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: 30,
+                width: 50,
+                child: Image.asset(AppAssets.vegIcon),
+              ),
+              Text("Vegetables", style: TextStyle(color: AppColors.grey)),
+            ],
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: 30,
+                width: 50,
+                child: Image.asset(AppAssets.vegIcon),
+              ),
+              Text("Herbs", style: TextStyle(color: AppColors.grey)),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }

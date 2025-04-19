@@ -52,4 +52,5 @@ class AppAssets {
   static const String expandIcon = 'assets/images/expand_icon.png';
   static const String filterIcon = 'assets/images/filter_icon.png';
   static const String sortIcon = 'assets/images/sort_icon.png';
+  static const String vegIcon = 'assets/images/Group 14.png';
 }
