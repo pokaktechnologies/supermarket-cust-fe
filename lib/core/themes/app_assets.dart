@@ -55,4 +55,5 @@ class AppAssets {
   static const String vegIcon = 'assets/images/Group 14.png';
 
   static const String mapImg = 'assets/images/map.png';
+  static const String singleImg = 'assets/images/single_img.png';
 }

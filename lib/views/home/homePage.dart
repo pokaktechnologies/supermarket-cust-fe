@@ -9,6 +9,7 @@ import 'package:supermarket_customer_fe/views/home/recomented_container.dart';
 import 'package:supermarket_customer_fe/views/home/shop_by_category.dart';
 import 'package:supermarket_customer_fe/views/home/top_brands.dart';
 import 'package:supermarket_customer_fe/views/order/order_tracking.dart';
+import 'package:supermarket_customer_fe/views/product/product_page.dart';
 import 'package:supermarket_customer_fe/views/profile/profile_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    pushNavigation(context, OrderTracking());
+                    pushNavigation(context, ProductPage());
                   },
                   child: const Icon(
                     Icons.location_on_outlined,
