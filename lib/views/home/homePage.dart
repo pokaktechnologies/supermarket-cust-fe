@@ -8,6 +8,7 @@ import 'package:supermarket_customer_fe/views/home/hot_pic_item.dart';
 import 'package:supermarket_customer_fe/views/home/recomented_container.dart';
 import 'package:supermarket_customer_fe/views/home/shop_by_category.dart';
 import 'package:supermarket_customer_fe/views/home/top_brands.dart';
+import 'package:supermarket_customer_fe/views/order/order_tracking.dart';
 import 'package:supermarket_customer_fe/views/profile/profile_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,9 +17,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.cloudGrey,
+      backgroundColor: const Color(0xFFEFF7F2),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF27AE60), // Green color (#27AE60)
+        backgroundColor: const Color(0xFF27AE60),
         elevation: 0,
         toolbarHeight: 140, // Extend AppBar height
         title: Column(
@@ -27,7 +28,15 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 10),
             Row(
               children: [
-                const Icon(Icons.location_on_outlined, color: Colors.white),
+                InkWell(
+                  onTap: () {
+                    pushNavigation(context, OrderTracking());
+                  },
+                  child: const Icon(
+                    Icons.location_on_outlined,
+                    color: Colors.white,
+                  ),
+                ),
                 const SizedBox(width: 8),
                 const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -240,10 +249,10 @@ class HomePage extends StatelessWidget {
                 FlashsaleScreen(),
                 ShopByCategory(),
                 TopBrands(),
-                SizedBox(height: 10,),
+                SizedBox(height: 10),
                 Image.asset(AppAssets.bannerImg1),
                 Image.asset(AppAssets.bannerImg2),
-                SizedBox(height: 10,),
+                SizedBox(height: 10),
               ],
             ),
           ],

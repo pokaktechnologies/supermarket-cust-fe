@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
-import 'package:supermarket_customer_fe/widgets/buttons/customButton.dart';
+import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/order/cancel_order.dart';
 
 class ReorderScreen extends StatelessWidget {
   const ReorderScreen({super.key});
@@ -88,7 +89,9 @@ class ReorderScreen extends StatelessWidget {
                 Row(
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        pushNavigation(context, CancelOrderScreen());
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,
                         shape: RoundedRectangleBorder(
