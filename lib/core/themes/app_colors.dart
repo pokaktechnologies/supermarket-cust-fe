@@ -15,6 +15,8 @@ class AppColors {
   static const lightGrey = Color(0xFFF3F1F1);
   static const textfieldGrey = Color.fromARGB(37, 243, 241, 241);
   static const green = Colors.green;
+  static const lightGreen = Color(0xFF8FD9B0);
+  static const darkGreen = Color(0xFF025B27);
   static const orange = Colors.orange;
   static const Color cloudGrey = Color(0xFFECF0F1);
 

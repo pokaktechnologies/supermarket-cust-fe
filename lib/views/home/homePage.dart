@@ -4,6 +4,7 @@ import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
 import 'package:supermarket_customer_fe/providers/home_provider.dart';
+import 'package:supermarket_customer_fe/views/cart/cart_page.dart';
 import 'package:supermarket_customer_fe/views/home/assistant_tile.dart';
 import 'package:supermarket_customer_fe/views/home/flashsale_screen.dart';
 import 'package:supermarket_customer_fe/views/home/hot_pic_item.dart';
@@ -275,11 +276,11 @@ class HomePage extends StatelessWidget {
                   children:
                       provider.isFloatingOpen
                           ? [
-                            _buildMiniFab(AppAssets.cartImg, 'Camera', () {
-                              // action 1
+                            _buildMiniFab(AppAssets.cartImg, 'Cart', () {
+                              pushNavigation(context, const CartPage());
                             }),
                             const SizedBox(height: 12),
-                            _buildMiniFab(AppAssets.vehicleImg, 'Gallery', () {
+                            _buildMiniFab(AppAssets.vehicleImg, 'Vehicle', () {
                               // action 2
                             }),
                           ]

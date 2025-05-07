@@ -57,7 +57,16 @@ class AppAssets {
   static const String mapImg = 'assets/images/map.png';
   static const String singleImg = 'assets/images/single_img.png';
 
-  static const String floatingActionImg = 'assets/images/floating_button_icon.png';
+  static const String floatingActionImg =
+      'assets/images/floating_button_icon.png';
   static const String cartImg = 'assets/images/cart_img.png';
   static const String vehicleImg = 'assets/images/vehicle_img.png';
+
+  // cart
+  static const String cartVehicle = 'assets/cart/cart_vehicle.png';
+  static const String cartDownArrow = 'assets/cart/down_arrow.png';
+  static const String cartLocation = 'assets/cart/location_img.png';
+  static const String cartItemOne = 'assets/cart/cart_item_1.png';
+  static const String cartItemTwo = 'assets/cart/cart_item_2.png';
+  static const String cartItemThree = 'assets/cart/cart_item_3.png';
 }
