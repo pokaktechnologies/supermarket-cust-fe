@@ -28,5 +28,6 @@ class AppColors {
   static const buttonBrown = Color(0xFFF39C12);
   static const lightBrown = Color(0xFFFDF2DF);
   static const lightGreenContainer = Color(0xFFEAFFF3);
+  static const lightOrange = Color(0xFFE74C3C);
   
 }

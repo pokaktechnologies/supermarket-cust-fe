@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/views/ai/ai_screen.dart';
 import 'package:supermarket_customer_fe/views/category/category.dart';
 import 'package:supermarket_customer_fe/views/home/homePage.dart';
-import 'package:supermarket_customer_fe/views/offerPage.dart';
+import 'package:supermarket_customer_fe/views/offer/offerpage.dart';
 import 'package:supermarket_customer_fe/views/re-order/re-order.dart';
 import 'package:supermarket_customer_fe/widgets/bottom_bar.dart';
 

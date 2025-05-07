@@ -15,7 +15,7 @@ class ShopByCategory extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 12, top: 15),
+            padding: const EdgeInsets.only(left: 20, top: 15),
             child: Text(
               "Shop by Category",
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
@@ -23,7 +23,7 @@ class ShopByCategory extends StatelessWidget {
           ),
 
           Padding(
-            padding: const EdgeInsets.only(left: 12, right: 12, top: 10),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -45,7 +45,7 @@ class ShopByCategory extends StatelessWidget {
           ),
 
           Padding(
-            padding: const EdgeInsets.only(left: 12, right: 12, top: 10),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -64,7 +64,7 @@ class ShopByCategory extends StatelessWidget {
           ),
 
           Padding(
-            padding: const EdgeInsets.only(left: 12, right: 12, top: 10),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
             child: Row(
               children: [
                 SingleProduct(text: "Seasonal & Holiday", image: AppAssets.catImg9),

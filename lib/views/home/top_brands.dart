@@ -16,7 +16,7 @@ class TopBrands extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 10, left: 10),
+            padding: const EdgeInsets.only(top: 10, left: 20),
             child: Text(
               "Top Brands",
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
@@ -24,7 +24,7 @@ class TopBrands extends StatelessWidget {
           ),
 
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -51,8 +51,8 @@ class SingleBrand extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      height: screenHeight * 0.09,
-      width: screenWidth * 0.23,
+      height: screenHeight * 0.08,
+      width: screenWidth * 0.21,
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.appbarColor),
         borderRadius: BorderRadius.circular(12),
