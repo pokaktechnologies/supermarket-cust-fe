@@ -6,7 +6,9 @@ import 'package:supermarket_customer_fe/core/utils/navigations.dart';
 import 'package:supermarket_customer_fe/providers/cart_provider.dart';
 import 'package:supermarket_customer_fe/views/cart/add_on.dart';
 import 'package:supermarket_customer_fe/views/cart/address_tile.dart';
+import 'package:supermarket_customer_fe/views/cart/bill_details.dart';
 import 'package:supermarket_customer_fe/views/cart/cart_items.dart';
+import 'package:supermarket_customer_fe/views/cart/delivery_to.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -73,7 +75,12 @@ class _CartPageState extends State<CartPage> {
               child: CartItems(),
             ),
             AddOnContainer(),
-            SizedBox(height: 100,)
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
+              child: BillDetails(),
+            ),
+            SizedBox(height: height * 0.02),
+            DeliveryTo(),
           ],
         ),
       ),

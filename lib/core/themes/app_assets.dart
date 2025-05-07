@@ -71,4 +71,6 @@ class AppAssets {
   static const String cartItemThree = 'assets/cart/cart_item_3.png';
   static const String cartCountIncrease = 'assets/cart/count_icrease.png';
   static const String cartCountDecrease = 'assets/cart/count_decrease.png';
+  static const String cartHomeIcon = 'assets/cart/cart_home_icon.png';
+  static const String cartWorkIcon = 'assets/cart/cart_work_icon.png';
 }
