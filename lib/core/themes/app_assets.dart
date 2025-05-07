@@ -56,4 +56,8 @@ class AppAssets {
 
   static const String mapImg = 'assets/images/map.png';
   static const String singleImg = 'assets/images/single_img.png';
+
+  static const String floatingActionImg = 'assets/images/floating_button_icon.png';
+  static const String cartImg = 'assets/images/cart_img.png';
+  static const String vehicleImg = 'assets/images/vehicle_img.png';
 }

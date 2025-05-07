@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/providers/home_provider.dart';
 import 'package:supermarket_customer_fe/views/home/assistant_tile.dart';
 import 'package:supermarket_customer_fe/views/home/flashsale_screen.dart';
 import 'package:supermarket_customer_fe/views/home/hot_pic_item.dart';
@@ -79,10 +81,10 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Container(
+      body: Stack(
+        children: [
+          SafeArea(
+            child: Container(
               decoration: BoxDecoration(
                 color: const Color(0xFFEFF7F2),
                 borderRadius: BorderRadius.only(
@@ -178,7 +180,10 @@ class HomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 16,
+                    ),
                     decoration: BoxDecoration(color: AppColors.lightBrown),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -258,9 +263,73 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+
+          Consumer<HomeProvider>(
+            builder: (context, provider, child) {
+              return Positioned(
+                right: 16,
+                bottom: 80,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children:
+                      provider.isFloatingOpen
+                          ? [
+                            _buildMiniFab(AppAssets.cartImg, 'Camera', () {
+                              // action 1
+                            }),
+                            const SizedBox(height: 12),
+                            _buildMiniFab(AppAssets.vehicleImg, 'Gallery', () {
+                              // action 2
+                            }),
+                          ]
+                          : [],
+                ),
+              );
+            },
+          ),
+        ],
       ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: Consumer<HomeProvider>(
+        builder: (context, provider, child) {
+          return FloatingActionButton(
+            elevation: 6.0,
+            shape: const CircleBorder(),
+            backgroundColor:
+                provider.isFloatingOpen ? Colors.white : Colors.green,
+            foregroundColor:
+                provider.isFloatingOpen ? Colors.green : Colors.white,
+            onPressed: () {
+              provider.updateFloatingState();
+            },
+            child:
+                provider.isFloatingOpen
+                    ? Icon(Icons.close, size: 23)
+                    : Image.asset(
+                      AppAssets.floatingActionImg,
+                      height: 22,
+                      width: 22,
+                      fit: BoxFit.contain,
+                    ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildMiniFab(String img, String tooltip, VoidCallback onTap) {
+    return RawMaterialButton(
+      onPressed: onTap,
+      elevation: 6.0,
+      constraints: const BoxConstraints.tightFor(
+        width: 75.0, // adjust width
+        height: 75.0, // adjust height
+      ),
+      shape: const CircleBorder(),
+      fillColor: Colors.green,
+      child: SizedBox(height: 30, width: 30, child: Image.asset(img)),
     );
   }
 }
