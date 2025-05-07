@@ -62,6 +62,9 @@ class AppAssets {
   static const String cartImg = 'assets/images/cart_img.png';
   static const String vehicleImg = 'assets/images/vehicle_img.png';
 
+  static const String orderSuccessImg = 'assets/images/order_success_img.png';
+  static const String orderFailImg = 'assets/images/order_fail_img.png';
+
   // cart
   static const String cartVehicle = 'assets/cart/cart_vehicle.png';
   static const String cartDownArrow = 'assets/cart/down_arrow.png';

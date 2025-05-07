@@ -21,17 +21,17 @@ class AppColors {
   static const Color mintGreenTransparent = Color(0x1727AE60);
   static const orange = Colors.orange;
   static const Color cloudGrey = Color(0xFFECF0F1);
+  static const customDarkRed = Color.fromARGB(255, 251, 232, 199);
 
   // homepage color
   static const Color mixedLightGreen = Color.fromARGB(255, 182, 222, 195);
   static const Color softAmber = Color.fromARGB(255, 243, 220, 186);
   static const Color amberYellow = Color(0xFFF39C12);
-  static const Color softRed = Color.fromARGB(255, 234, 170, 159); 
+  static const Color softRed = Color.fromARGB(255, 234, 170, 159);
 
   static const purpleAccent = Color(0xFF6C5CE7);
   static const buttonBrown = Color(0xFFF39C12);
   static const lightBrown = Color(0xFFFDF2DF);
   static const lightGreenContainer = Color(0xFFEAFFF3);
   static const lightOrange = Color(0xFFE74C3C);
-  
 }

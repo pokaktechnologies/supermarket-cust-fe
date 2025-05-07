@@ -4,6 +4,7 @@ import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
 import 'package:supermarket_customer_fe/providers/payment_provider.dart';
+import 'package:supermarket_customer_fe/views/order/order_status.dart';
 import 'package:supermarket_customer_fe/views/payment/add_upi_payment.dart';
 
 class PaymentPage extends StatelessWidget {
@@ -246,7 +247,7 @@ class PaymentPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: InkWell(
           onTap: () {
-            print("jhaidifd");
+            pushNavigation(context, OrderStatus(isOrderSuccess: true));
           },
           child: Container(
             height: height * 0.06,
