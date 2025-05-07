@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
 import 'package:supermarket_customer_fe/providers/cart_provider.dart';
-import 'package:supermarket_customer_fe/views/payment/add_upi_payment.dart';
+import 'package:supermarket_customer_fe/views/payment/payment_page.dart';
 
 class DeliveryTo extends StatelessWidget {
   const DeliveryTo({super.key});
@@ -97,7 +97,7 @@ class DeliveryTo extends StatelessWidget {
 
             InkWell(
               onTap: () {
-                pushNavigation(context, AddUpiScreen());
+                pushNavigation(context, PaymentPage());
               },
               child: Container(
                 height: height * 0.07,

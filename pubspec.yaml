@@ -68,6 +68,7 @@ flutter:
     - assets/home_icons/
     - assets/images/
     - assets/cart/
+    - assets/payment/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

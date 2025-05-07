@@ -73,4 +73,12 @@ class AppAssets {
   static const String cartCountDecrease = 'assets/cart/count_decrease.png';
   static const String cartHomeIcon = 'assets/cart/cart_home_icon.png';
   static const String cartWorkIcon = 'assets/cart/cart_work_icon.png';
+
+  // payment
+  static const String codImg = 'assets/payment/cod_img.png';
+  static const String netBankingImg = 'assets/payment/netbanking_img.png';
+  static const String upiPaymentImg = 'assets/payment/upi_payment_img.png';
+  static const String creditImg = 'assets/payment/upi_payment_img.png';
+  static const String downArrowBlack = 'assets/payment/black_down_arrow.png';
+  static const String upArrowBlack = 'assets/payment/black_up_arrow.png';
 }
