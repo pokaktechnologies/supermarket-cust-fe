@@ -4,6 +4,7 @@ import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
 import 'package:supermarket_customer_fe/providers/cart_provider.dart';
+import 'package:supermarket_customer_fe/views/cart/add_on.dart';
 import 'package:supermarket_customer_fe/views/cart/address_tile.dart';
 import 'package:supermarket_customer_fe/views/cart/cart_items.dart';
 
@@ -71,6 +72,8 @@ class _CartPageState extends State<CartPage> {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: CartItems(),
             ),
+            AddOnContainer(),
+            SizedBox(height: 100,)
           ],
         ),
       ),
