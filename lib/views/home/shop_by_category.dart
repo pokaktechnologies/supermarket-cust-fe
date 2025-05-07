@@ -7,7 +7,8 @@ class ShopByCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      color: Color(0xFFEAEAEA),
       // height: 380,
       width: double.infinity,
       child: Column(
@@ -96,7 +97,7 @@ class SingleProduct extends StatelessWidget {
 
     return Container(
       height: screenHeight * 0.16,
-      width: screenWidth * 0.22,
+      width: screenWidth * 0.21,
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(10),
