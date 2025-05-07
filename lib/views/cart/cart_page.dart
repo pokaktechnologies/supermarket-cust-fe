@@ -1,17 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/providers/cart_provider.dart';
 import 'package:supermarket_customer_fe/views/cart/address_tile.dart';
+import 'package:supermarket_customer_fe/views/cart/cart_items.dart';
 
-class CartPage extends StatelessWidget {
+class CartPage extends StatefulWidget {
   const CartPage({super.key});
+
+  @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends State<CartPage> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<CartProvider>(context, listen: false).resetValues();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var height = size.height;
     var width = size.width;
+
     return Scaffold(
       backgroundColor: AppColors.cloudGrey,
       appBar: AppBar(
@@ -23,13 +40,12 @@ class CartPage extends StatelessWidget {
           child: Image.asset(AppAssets.backArrow),
         ),
       ),
-
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               height: height * 0.05,
-              width: width * width,
+              width: width,
               color: AppColors.lightGreen,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -51,8 +67,10 @@ class CartPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: AddressTile(),
             ),
-
-            
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: CartItems(),
+            ),
           ],
         ),
       ),

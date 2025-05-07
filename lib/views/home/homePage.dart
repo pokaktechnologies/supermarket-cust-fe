@@ -13,8 +13,21 @@ import 'package:supermarket_customer_fe/views/home/shop_by_category.dart';
 import 'package:supermarket_customer_fe/views/home/top_brands.dart';
 import 'package:supermarket_customer_fe/views/profile/profile_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<HomeProvider>(context, listen: false).resetFloatingValue();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +36,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFF27AE60),
         elevation: 0,
-        toolbarHeight: 140, // Extend AppBar height
+        toolbarHeight: 140,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -63,12 +76,11 @@ class HomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 12),
-            // Rounded Search Bar
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(50), // Rounded pill shape
+                borderRadius: BorderRadius.circular(50),
               ),
               child: const TextField(
                 decoration: InputDecoration(
@@ -88,17 +100,17 @@ class HomePage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: const Color(0xFFEFF7F2),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(25),
                   topRight: Radius.circular(25),
                 ),
               ),
               child: ListView(
                 children: [
-                  SizedBox(height: 15),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 16),
-                    child: const Text(
+                  const SizedBox(height: 15),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20, right: 16),
+                    child: Text(
                       'Hot Picks',
                       style: TextStyle(
                         fontSize: 18,
@@ -108,12 +120,12 @@ class HomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 16),
+                    padding: EdgeInsets.only(left: 20, right: 16),
                     child: SizedBox(
                       height: 170,
                       child: ListView(
                         scrollDirection: Axis.horizontal,
-                        children: const [
+                        children: [
                           HotPickItemSec(
                             title: 'Essential Focus',
                             subtitle: 'Fresh Vegetables',
@@ -154,7 +166,7 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             'Deal of the day\nUp to 50% Off',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -168,7 +180,7 @@ class HomePage extends StatelessWidget {
                               color: AppColors.white,
                               borderRadius: BorderRadius.circular(25),
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Icon(
                                 Icons.arrow_right_alt_outlined,
                                 color: AppColors.green,
@@ -192,7 +204,7 @@ class HomePage extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
+                            const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -212,7 +224,7 @@ class HomePage extends StatelessWidget {
                                 color: AppColors.buttonBrown,
                                 borderRadius: BorderRadius.circular(8),
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   "Try Now",
                                   style: TextStyle(
@@ -224,8 +236,7 @@ class HomePage extends StatelessWidget {
                             ),
                           ],
                         ),
-
-                        SizedBox(height: 12),
+                        const SizedBox(height: 12),
                         SizedBox(
                           height: 150,
                           child: ListView(
@@ -252,20 +263,18 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-
-                  RecomentedContainer(),
-                  FlashsaleScreen(),
-                  ShopByCategory(),
-                  TopBrands(),
-                  SizedBox(height: 10),
+                  const RecomentedContainer(),
+                  const FlashsaleScreen(),
+                  const ShopByCategory(),
+                  const TopBrands(),
+                  const SizedBox(height: 10),
                   Image.asset(AppAssets.bannerImg1),
                   Image.asset(AppAssets.bannerImg2),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),
           ),
-
           Consumer<HomeProvider>(
             builder: (context, provider, child) {
               return Positioned(
@@ -281,7 +290,7 @@ class HomePage extends StatelessWidget {
                             }),
                             const SizedBox(height: 12),
                             _buildMiniFab(AppAssets.vehicleImg, 'Vehicle', () {
-                              // action 2
+                              // Vehicle action
                             }),
                           ]
                           : [],
@@ -291,7 +300,6 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: Consumer<HomeProvider>(
         builder: (context, provider, child) {
@@ -307,7 +315,7 @@ class HomePage extends StatelessWidget {
             },
             child:
                 provider.isFloatingOpen
-                    ? Icon(Icons.close, size: 23)
+                    ? const Icon(Icons.close, size: 23)
                     : Image.asset(
                       AppAssets.floatingActionImg,
                       height: 22,
@@ -324,10 +332,7 @@ class HomePage extends StatelessWidget {
     return RawMaterialButton(
       onPressed: onTap,
       elevation: 6.0,
-      constraints: const BoxConstraints.tightFor(
-        width: 75.0, // adjust width
-        height: 75.0, // adjust height
-      ),
+      constraints: const BoxConstraints.tightFor(width: 75.0, height: 75.0),
       shape: const CircleBorder(),
       fillColor: Colors.green,
       child: SizedBox(height: 30, width: 30, child: Image.asset(img)),
