@@ -82,7 +82,7 @@ class _SingleProductState extends State<SingleProduct> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        pushNavigation(context, ProductPage());
+        pushNavigation(context, ProductPage(img: AppAssets.singleImg));
       },
       child: SizedBox(
         width: 150,

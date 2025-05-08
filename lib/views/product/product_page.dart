@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/cart/cart_page.dart';
 
 class ProductPage extends StatefulWidget {
-  const ProductPage({super.key});
+  final String img;
+  const ProductPage({super.key, required this.img});
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -27,25 +29,30 @@ class _ProductPageState extends State<ProductPage> {
           children: [
             const Icon(Icons.search, color: Colors.white),
             const SizedBox(width: 10),
-            Stack(
-              children: [
-                const Icon(Icons.shopping_cart, color: Colors.white),
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: Container(
-                    padding: const EdgeInsets.all(2),
-                    decoration: const BoxDecoration(
-                      color: Colors.red,
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Text(
-                      '1',
-                      style: TextStyle(color: Colors.white, fontSize: 10),
+            InkWell(
+              onTap: () {
+                pushNavigation(context, CartPage());
+              },
+              child: Stack(
+                children: [
+                  const Icon(Icons.shopping_cart, color: Colors.white),
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Container(
+                      padding: const EdgeInsets.all(2),
+                      decoration: const BoxDecoration(
+                        color: Colors.red,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Text(
+                        '1',
+                        style: TextStyle(color: Colors.white, fontSize: 10),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
@@ -56,7 +63,7 @@ class _ProductPageState extends State<ProductPage> {
             width: double.infinity,
             color: AppColors.mixedLightGreen,
             child: Image.asset(
-              AppAssets.singleImg,
+              widget.img,
               height: 200,
               fit: BoxFit.contain,
             ),

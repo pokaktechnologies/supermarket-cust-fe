@@ -27,14 +27,18 @@ class FlashsaleScreen extends StatelessWidget {
               children: [
                 Text(
                   "Flash Sale",
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: AppColors.buttonBrown,
+                  ),
                 ),
                 Text(
-                  "See all",
+                  "02h 30m 02s",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 15,
-                    color: AppColors.green,
+                    color: AppColors.lightOrange,
                   ),
                 ),
               ],
@@ -46,11 +50,20 @@ class FlashsaleScreen extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  SingleProduct(),
+                  SingleProduct(
+                    img: AppAssets.cartItemTwo,
+                    heading: "Broccoli",
+                  ),
                   SizedBox(width: 10),
-                  SingleProduct(),
+                  SingleProduct(
+                    img: AppAssets.recoImge,
+                    heading: "Organic Almond Milk",
+                  ),
                   SizedBox(width: 10),
-                  SingleProduct(),
+                  SingleProduct(
+                    img: AppAssets.singleImg,
+                    heading: "Hybrid Tomato",
+                  ),
                 ],
               ),
             ),
@@ -62,7 +75,9 @@ class FlashsaleScreen extends StatelessWidget {
 }
 
 class SingleProduct extends StatefulWidget {
-  const SingleProduct({super.key});
+  final String img;
+  final String heading;
+  const SingleProduct({super.key, required this.img, required this.heading});
 
   @override
   State<SingleProduct> createState() => _SingleProductState();
@@ -89,7 +104,7 @@ class _SingleProductState extends State<SingleProduct> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        pushNavigation(context, ProductPage());
+        pushNavigation(context, ProductPage(img: widget.img));
       },
       child: SizedBox(
         width: 150,
@@ -203,7 +218,7 @@ class _SingleProductState extends State<SingleProduct> {
                     ),
                     Center(
                       child: Image.asset(
-                        AppAssets.recoImge,
+                        widget.img,
                         height: 70,
                         fit: BoxFit.contain,
                       ),
@@ -220,8 +235,8 @@ class _SingleProductState extends State<SingleProduct> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Organic Almond Milk",
+                    Text(
+                      widget.heading,
                       style: TextStyle(fontWeight: FontWeight.w600),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
