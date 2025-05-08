@@ -14,3 +14,9 @@ void pushAndRemoveUntilFun(BuildContext context, Widget navPage) {
 void popNavigation(BuildContext context) {
   Navigator.pop(context);
 }
+
+void pushReplacementNavigation(BuildContext context, Widget navPage) {
+  Navigator.of(
+    context,
+  ).pushReplacement(MaterialPageRoute(builder: (context) => navPage));
+}

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/home/homeMainScreen.dart';
+import 'package:supermarket_customer_fe/views/order/cancel_order.dart';
 
 class OrderTracking extends StatelessWidget {
   const OrderTracking({super.key});
@@ -22,7 +24,7 @@ class OrderTracking extends StatelessWidget {
           ),
         ),
         leading: InkWell(
-          onTap: () => popNavigation(context),
+          onTap: () => pushAndRemoveUntilFun(context, MainScreen()),
           child: Image.asset(AppAssets.backArrow),
         ),
         actions: const [
@@ -171,7 +173,9 @@ class OrderTracking extends StatelessWidget {
                 const SizedBox(width: 12),
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      pushNavigation(context, CancelOrderScreen());
+                    },
                     style: OutlinedButton.styleFrom(
                       side: const BorderSide(color: Color(0xFF28A745)),
                       padding: const EdgeInsets.symmetric(vertical: 14),

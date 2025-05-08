@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:supermarket_customer_fe/core/themes/app_assets.dart';
 import 'package:supermarket_customer_fe/core/themes/app_colors.dart';
 import 'package:supermarket_customer_fe/core/utils/navigations.dart';
+import 'package:supermarket_customer_fe/views/order/order_tracking.dart';
 
 class OrderStatus extends StatelessWidget {
   final bool isOrderSuccess;
@@ -65,7 +66,7 @@ class OrderStatus extends StatelessWidget {
 Widget responseButton(height, width, BuildContext context, isOrderSuccess) {
   return InkWell(
     onTap: () {
-      popNavigation(context);
+      pushReplacementNavigation(context, OrderTracking());
     },
     child: Container(
       height: height * 0.05,
